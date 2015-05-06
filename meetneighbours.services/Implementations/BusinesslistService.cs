@@ -27,7 +27,7 @@ namespace meetneighbours.services.Implementations
 
         public List<DTO.BusinessLists> GetAllBusinessLists()
         {
-            throw new NotImplementedException();
+            return _BusinessListsRepository.GetAll().ToList();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using meetneighbours.model;
 using meetneighbours.dal.Contracts;
 
-namespace dplan.Dal.Implementations
+namespace meetneighbours.dal.Implementations
 {
     public class UnitOfWork : IUnitOfWork
     {

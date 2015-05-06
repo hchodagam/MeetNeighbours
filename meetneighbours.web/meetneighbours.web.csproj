@@ -39,6 +39,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -121,7 +133,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BusinessListsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DI_IOC\ControllerFactory.cs" />
+    <Compile Include="DI_IOC\DependencyInstaller.cs" />
+    <Compile Include="DI_IOC\WindsorActivator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +190,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\meetneighbours.dal\meetneighbours.dal.csproj">
+      <Project>{7d9f10db-a83f-454d-aa77-053c5cd3c007}</Project>
+      <Name>meetneighbours.dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\meetneighbours.DTO\meetneighbours.DTO.csproj">
+      <Project>{4cfd0809-a93a-478e-ac44-5736ec18d88c}</Project>
+      <Name>meetneighbours.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\meetneighbours.repository\meetneighbours.repository.csproj">
+      <Project>{a228b25c-4f4b-4468-b9f2-27bec8bf5a11}</Project>
+      <Name>meetneighbours.repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\meetneighbours.services\meetneighbours.services.csproj">
+      <Project>{d593c678-1b25-4441-924f-3bd36f0aae4c}</Project>
+      <Name>meetneighbours.services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
