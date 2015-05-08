@@ -24,5 +24,11 @@ namespace meetneighbours.web.Controllers
             //return _securityrequest.GetMany(HttpContext.Current.Request.LogonUserIdentity.Name.Substring(3));
             return _BusinessListService.GetAllBusinessLists();
         }
+
+        [Route("AddBusinessList")]
+        public void AddBusinessList()
+        {
+            
+        }
     }
 }

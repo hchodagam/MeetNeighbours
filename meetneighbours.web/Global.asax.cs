@@ -35,6 +35,11 @@ namespace meetneighbours.web
             GlobalConfiguration.Configuration.Services.Replace(
              typeof(IHttpControllerActivator),
              new WindsorActivator(this.container));
+
+            container.Register(Castle.MicroKernel.Registration.Classes.FromThisAssembly()
+.BasedOn<IController>()
+.LifestylePerWebRequest()
+.Configure(x => x.Named(x.Implementation.FullName)));
         }
     }
 }

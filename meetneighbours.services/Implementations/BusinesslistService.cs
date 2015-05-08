@@ -29,5 +29,11 @@ namespace meetneighbours.services.Implementations
         {
             return _BusinessListsRepository.GetAll().ToList();
         }
+
+
+        public void AddBusinessList(DTO.BusinessLists BList)
+        {
+            _BusinessListsRepository.Add(BList);
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace meetneighbours.services.contracts
     public interface IBusinessListService
     {
         List<BusinessLists> GetAllBusinessLists();
+        void AddBusinessList(BusinessLists BList);
     }
 }
