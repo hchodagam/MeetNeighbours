@@ -37,9 +37,9 @@ namespace meetneighbours.web
              new WindsorActivator(this.container));
 
             container.Register(Castle.MicroKernel.Registration.Classes.FromThisAssembly()
-.BasedOn<IController>()
-.LifestylePerWebRequest()
-.Configure(x => x.Named(x.Implementation.FullName)));
+                        .BasedOn<IController>()
+                        .LifestylePerWebRequest()
+                        .Configure(x => x.Named(x.Implementation.FullName)));
         }
     }
 }

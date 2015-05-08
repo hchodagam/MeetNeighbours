@@ -8,6 +8,11 @@ namespace meetneighbours.web
         // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
+            //bundles.Add(new ScriptBundle("~/bundles/angular", "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/angular.js"));
+            //bundles.Add(new ScriptBundle("~/bundles/jquery", "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
@@ -26,6 +31,7 @@ namespace meetneighbours.web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }
