@@ -1,7 +1,9 @@
 ﻿using Castle.Windsor;
+using meetneighbours.model;
 using meetneighbours.web.DI_IOC;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -25,6 +27,7 @@ namespace meetneighbours.web
         }
         protected void Application_Start()
         {
+            //Database.SetInitializer<MeetNeighboursContext>(new DropCreateDatabaseIfModelChanges<MeetNeighboursContext>());
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -40,6 +43,7 @@ namespace meetneighbours.web
                         .BasedOn<IController>()
                         .LifestylePerWebRequest()
                         .Configure(x => x.Named(x.Implementation.FullName)));
+            Database.SetInitializer<MeetNeighboursContext>(null);
         }
     }
 }

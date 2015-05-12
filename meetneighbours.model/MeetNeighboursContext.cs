@@ -13,7 +13,7 @@ namespace meetneighbours.model
     {
         public MeetNeighboursContext()
         {
-            Database.SetInitializer<MeetNeighboursContext>(new DropCreateDatabaseIfModelChanges<MeetNeighboursContext>());
+            Database.SetInitializer<MeetNeighboursContext>(new CreateDatabaseIfNotExists<MeetNeighboursContext>());
         }
         public void Commit()
         {

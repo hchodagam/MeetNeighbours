@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace meetneighbours.DTO
 {
+    [Table("BusinessLists")]
     public class BusinessLists
     {
        

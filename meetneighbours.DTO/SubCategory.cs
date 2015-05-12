@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace meetneighbours.DTO
 {
+    [Table("SubCategory")]
     public class SubCategory
     {
         [Key]

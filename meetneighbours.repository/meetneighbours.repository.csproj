@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessListsRepository.cs" />
+    <Compile Include="CategoryRepository.cs" />
     <Compile Include="CityRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\meetneighbours.dal\meetneighbours.dal.csproj">
@@ -63,10 +68,6 @@
       <Project>{d3a812f9-a8e5-47b6-8b3f-b886dfd2ea51}</Project>
       <Name>meetneighbours.model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
