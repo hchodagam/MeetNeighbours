@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using meetneighbours.DTO;
 using System.Data.Entity.Validation;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace meetneighbours.model
 {
@@ -13,7 +14,7 @@ namespace meetneighbours.model
     {
         public MeetNeighboursContext()
         {
-            Database.SetInitializer<MeetNeighboursContext>(new CreateDatabaseIfNotExists<MeetNeighboursContext>());
+            Database.SetInitializer<MeetNeighboursContext>(new DropCreateDatabaseIfModelChanges<MeetNeighboursContext>());
         }
         public void Commit()
         {
@@ -38,6 +39,8 @@ namespace meetneighbours.model
         public DbSet<City> City { get; set; }
         public DbSet<Locality> Locality { get; set; }
         public DbSet<BusinessLists> BusinessLists { get; set; }
+
+      
     }
 
 }

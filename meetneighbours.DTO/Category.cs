@@ -18,12 +18,8 @@ namespace meetneighbours.DTO
         public string Name{ get; set; }
         public string Description { get; set; }
         
-        public DateTime AddedOn
-        {
-            get;
-            set; 
-        }
-        [DefaultValue(1)]
+        public DateTime? AddedOn{get;set;}
+        [DefaultValue(true)]
         public bool Active{ get; set; }
         public DateTime? DeactivatedOn { get; set; }
         public int LastUpdatedBy { get; set; }
