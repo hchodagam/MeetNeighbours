@@ -1,24 +1,498 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@font-face {
+  font-family: 'PFDinLight';
+  src: url("fonts/PFDinTextCondPro-Light.woff?#iefix");
+  src: url("fonts/PFDinTextCondPro-Light.woff?#iefix") format("woff");
+  font-weight: lighter;
+  font-style: normal;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+@font-face {
+  font-family: 'PFDinRegular';
+  src: url("fonts/PFDinTextCondPro-Regular.woff?#iefix");
+  src: url("fonts/PFDinTextCondPro-Regular.woff?#iefix") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+@font-face {
+  font-family: 'PFDinMedium';
+  src: url("fonts/PFDinTextCondPro-Medium.woff?#iefix");
+  src: url("fonts/PFDinTextCondPro-Medium.woff?#iefix") format("woff");
+  font-weight: bold;
+  font-style: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+@font-face {
+  font-family: 'HelveticaNeueLight';
+  src: url("fonts/HelveticaNeue-Light.woff?#iefix");
+  src: url("fonts/HelveticaNeue-Light.woff?#iefix") format("woff");
+  font-weight: lighter;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: 'HelveticaNeueRegular';
+  src: url("fonts/HelveticaNeue-Regular.woff?#iefix");
+  src: url("fonts/HelveticaNeue-Regular.woff?#iefix") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HelveticaNeueBold';
+  src: url("fonts/HelveticaNeue-Bold.woff?#iefix");
+  src: url("fonts/HelveticaNeue-Bold.woff?#iefix") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body { 
+  background: url(../Content/Images/background_blue1.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'PFDinRegular';
+  font-size: 16px;
+}
+#wrapper {
+  transition: all 0.4s ease 0s;
+}
+.push-right {
+  float: right;
+}
+
+#sidebar-wrapper {
+  border-right: 1px solid #585858;
+    bottom: 0;
+    color: #afafaf;
+    float:left;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 7%;
+}
+
+#page-content-wrapper {
+  width: 100%;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width:5%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width:767px) {
+
+    #wrapper {
+      padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+      left: 0;
+    }
+
+    #wrapper.active {
+      position: relative;
+      left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+      left: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+
+}
+
+header {
+    /*background: url("Content/../images/background_blue_header.jpg?1394715942") no-repeat scroll center center / cover rgba(0, 0, 0, 0);*/
+    color: #fff;
+    height: 60px;
+    left: 0%;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 1020;
+    background-color:#fff;
+   
+}
+
+.button.principal {
+    background-color: rgba(0, 170, 255, 0.14);
+}
+ .logo{
+
+    float:left;
+    padding:15px 10px;
+}
+header .button {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.1);
+    /*border-right: 1px solid #747474;*/
+    cursor: pointer;
+    height: 60px;
+    line-height: 60px;
+    width: 10%;
+}
+.push-left {
+    float: left;
+}
+.push-right {
+    float: right;
+}
+header input {
+    background: none repeat scroll 0 0 #000;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    color: #e6e6e6;
+    font-size: 16px;
+    height: 39px;
+    line-height: 34px;
+    margin: 10px;
+    outline: medium none;
+    padding-left: 30px;
+    transition: all 0.3s ease-in-out 0s;
+    width: 55%;
+}
+header input.placeholder {
+    color: #afafaf;
+}
+header input:focus {
+    border: 1px solid #49b8e1;
+    box-shadow: 0 0 5px #49b8e1;
+}
+
+
+/* line 23, styles-sass/sections/_sidebar.scss */
+.application {
+  padding-top: 25px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+  cursor: pointer;
+  font-family: "HelveticaNeueRegular";
+}
+/* line 30, styles-sass/sections/_sidebar.scss */
+.application > div {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 0px 3px #afafaf;
+  margin-bottom: 5px;
+}
+.application > div span {
+  font-weight: bold;
+}
+/* line 41, styles-sass/sections/_sidebar.scss */
+.application > div.active {
+  background-color: #afafaf;
+  overflow: hidden;
+  display: inline-block;
+}
+/* line 46, styles-sass/sections/_sidebar.scss */
+.application > div.active span {
+  background: url('Content/../images/background.jpg') no-repeat center center;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  display: block;
+}
+/* line 54, styles-sass/sections/_sidebar.scss */
+.application:hover {
+  color: white;
+}
+/* line 56, styles-sass/sections/_sidebar.scss */
+.application:hover > div {
+	-webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  margin: 0 auto;
+  box-shadow: 0px 0px 0px 3px #49b8e1;
+  margin-bottom: 5px;
+  box-shadow: 0 0 5px #49b8e1;
+}
+
+
+.user {
+  background: rgba(255, 255, 255, 0);
+  text-align: right;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+thead th a{
+    
+    color: #afafaf;
+    font-family: "PFDinLight";
+	text-decoration:none;
+	cursor: pointer;
+    float: left;
+}
+
+thead th a:hover{
+    
+    color: #FFFFFF;
+    font-family: "PFDinLight";
+	text-decoration:none;
+	cursor: pointer;
+    float: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: transparent;
+    max-width: 100%;
+    border-spacing: 0;
+	color:#747474;
+    margin-top: 60px;
+	white-space:nowrap;
+}
+ thead tr {
+    background-color: #dce0e4;
+    border-bottom: 2px solid #8f97a4;
+	text-align:left;
+}
+
+ .odd{
+    background-color: #ffffff;
+	
+}
+ .even{
+    background-color: #fbfcfd;
+}
+th {
+    background-color: #eff3f4;
+    border-bottom: 1px solid #e5e9ec;
+	border-right: 1px solid #fff;
+    font-family: PFDinLight;
+}
+td, th {
+    height: 25px;
+    padding: 5px;
+}
+th {
+    text-align: left;
+}
+tr th {
+color:#333;
+font-family: PFDinMedium;
+padding-left:10px;
+}
+
+.minus:before {
+  padding-right:5px;
+  content: "-";
+  cursor: pointer;
+}
+
+.plus:before {
+	padding-right:5px;
+  content: "+";
+  cursor: pointer;
+}
+
+tr.accordion th {
+
+	border-bottom:1px solid #fff;
+	border-right:none;
+}
+
+.line {
+  padding: 25px 0px;
+  clear: both;
+}
+/* line 232, styles-sass/sections/pricing/_content.scss */
+.half {
+  width: 50%;
+  float: left;
+}
+/* line 235, styles-sass/sections/pricing/_content.scss */
+.half > .half {
+  padding: 0 5px;
+}
+
+.data {
+  color: #afafaf;
+  text-align: right;
+  font-size: 0.9em;
+  font-family: "HelveticaNeueRegular";
+}
+/* line 243, styles-sass/sections/pricing/_content.scss */
+.value {
+  width: auto;
+  font-family: "PFDinLight";
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 270px;
+}
+.requestdetails {
+	background-color:#FFFFFF;
+	margin-top:4%;
+}
+
+h4 {
+    font-size: 1.7em;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "PFDinRegular";
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h4, h5, h6 {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "PFDinRegular";
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+.status {
+  left: 44%;
+    position: absolute;
+    text-align: center;
+    top: 10px;
+    width: 180px;
+}
+/* line 89, styles-sass/sections/pricing/_content.scss */
+.status .status-review {
+  color: #49b8e1;
+}
+/* line 92, styles-sass/sections/pricing/_content.scss */
+.status .status-declined {
+  color: #ef5959;
+}
+/* line 95, styles-sass/sections/pricing/_content.scss */
+.status .status-completed {
+  color: #3aab52;
+}
+/* line 98, styles-sass/sections/pricing/_content.scss */
+.status .status-draft {
+  color: #ac65d1;
+}
+/* line 101, styles-sass/sections/pricing/_content.scss */
+.status .status-revision {
+  color: #f29708;
+}
+
+.header h3 {
+    color: #00a1de;
+    line-height: 40px;
+    margin: 0;
+	font-family: "PFDinRegular";
+	font-size: 24px;
+}
+
+.header .secrequest-info {
+  position: fixed;
+  width: 96%;
+  width: calc(100% - 70px);
+  border-top: 5px solid #49b8e1;
+  border-bottom: 2px solid gold;
+  height: 80px;
+  max-width: 1680px;
+  top: 60px;
+  background-color: whitesmoke;
+  padding: 10px;
+  z-index: 1;
+}
+
+.header .secrequest-info-details {
+  width: calc(100% - 70px);
+  border-bottom:1px solid black;
+  max-width: 1680px;
+  top: 60px;
+  padding-top: 10px;
+  z-index: 1;
+  background-color:white;
+}
+
+.header .secrequest-info .request-id {
+    color: #49b8e1;
+    font-size: 0.9em;
+}
+
+/*ul {
+    padding: 0em;
+}
+
+ul li, ul li ul li {
+    position:relative;
+    top:0;
+    bottom:0;
+    padding-bottom: 7px;
+
+}
+
+ul li ul {
+    margin-left: 4em;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    padding:0 0 0 10px;
+    position: relative;
+    top:1em;
+}
+
+li a:hover {
+    text-decoration: none;
+}
+
+a.addBorderBefore:before {
+    content: "";
+    display: inline-block;
+    width: 2px;
+    height: 28px;
+    position: absolute;
+    left: -45px;
+    top:-16px;
+    border-left: 1px solid gray;
+}
+
+li:before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 0;
+    position: relative;
+    left: 0em;
+    top:1em;
+    border-top: 1px solid gray;
+}
+
+ul li ul li:last-child:after, ul li:last-child:after {
+    content: '';
+    display: block;
+    width: 1em;
+    height: 1em;
+    position: relative;
+    background: #fff;
+    top: 9px;
+    left: -1px;
+}*/
